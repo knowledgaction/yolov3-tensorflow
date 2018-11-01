@@ -4,7 +4,7 @@ import tensorflow as tf
 
 from models.yolo_v3 import yolo_v3
 from models.loss_functions.yolo_v3_loss import yolo_v3_loss
-from utils.utils import get_anchors, get_classes, get_training_batch, prepare_data
+from utils import get_anchors, get_classes, get_training_batch, prepare_data
 
 
 def str2bool(v):
@@ -182,7 +182,8 @@ def _main():
                                       feed_dict={X: input_images, y_true_data: y_true, y_true_box_data: y_true_boxes})
                     val_writer.add_summary(sv, i)
                     print(
-                        "| iteration: " + str(i) + ", training loss: " + str(round(lt, 2)) + ", validation loss: " + str(
+                        "| iteration: " + str(i) + ", training loss: " + str(
+                            round(lt, 2)) + ", validation loss: " + str(
                             round(lv, 2)))
                 else:
                     print("| iteration: " + str(i) + ", training loss: " + str(round(lt, 2)))
