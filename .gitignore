@@ -10,5 +10,9 @@ CTestTestfile.cmake
 
 .idea/*
 
-# data
+## data
 data/WIDERface/
+
+## Virtualenv
+venv/
+
